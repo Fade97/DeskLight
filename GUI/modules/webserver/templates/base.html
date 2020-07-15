@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+    <div id="headercon">
+        {% include "header.html" %}
+    </div>
+    <div id="contentcon">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

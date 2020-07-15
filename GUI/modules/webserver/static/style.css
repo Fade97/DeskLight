@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    background-color: #101021;
+}
+
+#headercon{
+    width: 100%;
+    height: 60px;
+    background-color: #35356E;
+}
+
+#headercon a{
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: #eee;
+    background-color: #35356E;
+}
+
+#headercon a:hover{
+    background-color: #5353AD;
+}
+
+.header_left{
+    float: left;
+}
+
+.header_right{
+    float: right;
+}
