@@ -8,4 +8,11 @@ Settings
 
 Here will be all the settings your heart desires!
 
+{% with settingName="Continious updates", settingDescription="Regularly send updates to the light controller.", type="switch" %}
+{% include "components/setting.html" %}
+{% endwith %}
+{% with settingName="Continious usdpdates", settingDescription="Regularsdly send updates to the light controller.", type="switch" %}
+{% include "components/setting.html" %}
+{% endwith %}
+
 {% endblock %}

@@ -1,0 +1,16 @@
+<div class="setting_con">
+    <div class="settingName">
+        {{settingName}}
+    </div>
+
+    <div class="settingDescription">
+        {{settingDescription}}
+    </div>
+
+    <div class="settingType">
+        {% if type=="switch" %}
+        {% include "components/toggleswitch.html" %}
+        {% endif %}
+    </div>
+
+</div>
