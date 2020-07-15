@@ -1,9 +1,12 @@
-<a href="/" id="header_settings" class="header_left">
+<a href="/" id="header_home" {% if currentSite == 'index' %} class="header_left header_current" {% else %}
+    class="header_left" {% endif %}>
     Home
 </a>
-<a href="/settings" id="header_settings" class="header_right">
+<a href="/settings" id="header_settings" {% if currentSite == 'settings' %} class="header_right header_current"
+    {% else %} class="header_right" {% endif %}>
     Settings
 </a>
-<a href="/games" id="header_settings" class="header_right">
+<a href="/games" id="header_games" {% if currentSite == 'games' %} class="header_right header_current" {% else %}
+    class="header_right" {% endif %}>
     Games
 </a>

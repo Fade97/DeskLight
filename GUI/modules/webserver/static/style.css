@@ -3,11 +3,14 @@
     margin: 0px;
     padding: 0px;
     font-family: "Open Sans", sans-serif;
+    color: #eee;
 }
 
 body{
     background-color: #101021;
 }
+
+/* ------ Header ------ */
 
 #headercon{
     width: 100%;
@@ -36,4 +39,21 @@ body{
 
 .header_right{
     float: right;
+}
+
+#headercon a.header_current{
+    background-color: #7878FA;
+}
+
+/* ------ Content ------ */
+
+#contentcon{
+    width: calc(100% - 100px);
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.contentHeader{
+    padding-bottom: 20px;
 }

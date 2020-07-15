@@ -6,6 +6,10 @@ def create_app():
 
     from main import bp_main
     app.register_blueprint(bp_main)
+
+    from modules import bp_modules
+    app.register_blueprint(bp_modules)
+
     app.run(host='localhost', port='5000')
 
 
