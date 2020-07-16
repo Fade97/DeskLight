@@ -6,12 +6,15 @@ Settings
 
 {% block cont_content %}
 
-Here will be all the settings your heart desires!
+<div class="contentDescription">
+    Here will be all the settings your heart desires!
+</div>
 
 {% with settingName="Continious updates", settingDescription="Regularly send updates to the light controller.", type="switch" %}
 {% include "components/setting.html" %}
 {% endwith %}
-{% with settingName="Continious usdpdates", settingDescription="Regularsdly send updates to the light controller.", type="switch" %}
+
+{% with settingName="Store state", settingDescription="Stores the last animation and color in the EEPROM of the controller.", type="switch" %}
 {% include "components/setting.html" %}
 {% endwith %}
 
