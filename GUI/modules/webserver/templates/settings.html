@@ -18,4 +18,9 @@ Settings
 {% include "components/setting.html" %}
 {% endwith %}
 
+<form action="/updateleds" method="POST">
+    <input type="text" name="command" id="cmd">
+    <button type="submit" class="btnSubmit">Los</button>
+</form>
+
 {% endblock %}

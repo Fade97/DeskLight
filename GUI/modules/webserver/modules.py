@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect
 
 bp_modules = Blueprint('modules', __name__)
 
@@ -11,3 +11,13 @@ def games():
 @bp_modules.route('/settings')
 def settings():
     return render_template('settings.html', currentSite='settings')
+
+
+@bp_modules.route('/updateleds', methods=['GET', 'POST'])
+def updateleds():
+    if request.method == "POST":
+        req = request.form
+        print(req.get('command'))
+        from webserver import inBuffer
+        inBuffer(req.get('command'))
+        return redirect('/settings')
