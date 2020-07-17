@@ -18,8 +18,18 @@ Settings
 {% include "components/setting.html" %}
 {% endwith %}
 
+
 <form action="/updateleds" method="POST">
-    <input type="text" name="command" id="cmd">
+    {% with name="sliderR" %}
+        {% include "components/slider.html" %} 
+    {% endwith %}
+    {% with name="sliderG" %}
+        {% include "components/slider.html" %} 
+    {% endwith %}
+    {% with name="sliderB" %}
+        {% include "components/slider.html" %} 
+    {% endwith %}
+    
     <button type="submit" class="btnSubmit">Los</button>
 </form>
 

@@ -19,5 +19,6 @@ def updateleds():
         req = request.form
         print(req.get('command'))
         from webserver import inBuffer
-        inBuffer(req.get('command'))
+        inBuffer('<1,' + req.get('sliderR') + ',' +
+                 req.get('sliderG') + ',' + req.get('sliderB') + '>')
         return redirect('/settings')
