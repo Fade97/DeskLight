@@ -18,19 +18,8 @@ Settings
 {% include "components/setting.html" %}
 {% endwith %}
 
-
-<form action="/updateleds" method="POST">
-    {% with name="sliderR" %}
-        {% include "components/slider.html" %} 
-    {% endwith %}
-    {% with name="sliderG" %}
-        {% include "components/slider.html" %} 
-    {% endwith %}
-    {% with name="sliderB" %}
-        {% include "components/slider.html" %} 
-    {% endwith %}
-    
-    <button type="submit" class="btnSubmit">Los</button>
-</form>
+{% with settingName="Color", settingDescription="Set the color of the LEDs", type="color" %}
+{% include "components/setting.html" %}
+{% endwith %}
 
 {% endblock %}

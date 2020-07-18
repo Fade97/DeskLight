@@ -1,0 +1,90 @@
+<div class="color-picker">
+</div>
+<script>
+    // Simple example, see optional options for more configuration.
+    const pickr = Pickr.create({
+        el: '.color-picker',
+        theme: 'classic', // or 'monolith', or 'nano'
+
+        default: 'rgb(' + getCookie("colR") + ',' + getCookie("colG") + ',' + getCookie("colB") + ')',
+
+        swatches: [
+            'rgba(244, 67, 54, 1)',
+            'rgba(233, 30, 99, 0.95)',
+            'rgba(156, 39, 176, 0.9)',
+            'rgba(103, 58, 183, 0.85)',
+            'rgba(63, 81, 181, 0.8)',
+            'rgba(33, 150, 243, 0.75)',
+            'rgba(3, 169, 244, 0.7)',
+            'rgba(0, 188, 212, 0.7)',
+            'rgba(0, 150, 136, 0.75)',
+            'rgba(76, 175, 80, 0.8)',
+            'rgba(139, 195, 74, 0.85)',
+            'rgba(205, 220, 57, 0.9)',
+            'rgba(255, 235, 59, 0.95)',
+            'rgba(255, 193, 7, 1)'
+        ],
+
+        components: {
+
+            // Main components
+            preview: true,
+            opacity: false,
+            hue: true,
+
+            // Input / output Options
+            interaction: {
+                input: true,
+                clear: true,
+                save: true
+            }
+        }
+    });
+</script>
+<form action="/updateleds" method="POST" id="formColor">
+</form>
+<script>
+    var r = getCookie("colR");
+    var g = getCookie("colG");
+    var b = getCookie("colB");
+    var form = document.getElementById("formColor");
+    colorR = document.createElement('input');
+    colorR.type = 'hidden';
+    colorR.name = 'colorR';
+    if (r != "" && r <= 255 && r >= 0) {
+        colorR.value = r;
+    } else {
+        colorR.value = 255;
+    }
+    colorG = document.createElement('input');
+    colorG.type = 'hidden';
+    colorG.name = 'colorG';
+    if (g != "" && g <= 255 && g >= 0) {
+        colorG.value = g;
+    } else {
+        colorG.value = 32;
+    }
+    colorB = document.createElement('input');
+    colorB.type = 'hidden';
+    colorB.name = 'colorB';
+    if (b != "" && b <= 255 && b >= 0) {
+        colorB.value = b;
+    } else {
+        colorB.value = 0;
+    }
+
+    form.appendChild(colorR);
+    form.appendChild(colorG);
+    form.appendChild(colorB);
+
+    pickr.on('save', (color, instance) => {
+        colorR.value = color.toRGBA()[0];
+        colorG.value = color.toRGBA()[1];
+        colorB.value = color.toRGBA()[2];
+        setCookie("colR", colorR.value, 365);
+        setCookie("colG", colorG.value, 365);
+        setCookie("colB", colorB.value, 365);
+        pickr.hide();
+        form.submit();
+    })
+</script>

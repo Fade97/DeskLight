@@ -1,6 +1,10 @@
 <html>
 
 <head>
+    <!-- 'nano' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
@@ -9,8 +13,7 @@
         {% include "header.html" %}
     </div>
     <div id="contentcon">
-        {% block content %}
-        {% endblock %}
+        {% block content %} {% endblock %}
     </div>
 </body>
 
