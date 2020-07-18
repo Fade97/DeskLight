@@ -17,8 +17,7 @@ def settings():
 def updateleds():
     if request.method == "POST":
         req = request.form
-        print(req.get('command'))
         from webserver import inBuffer
-        inBuffer('<1,' + req.get('colorR') + ',' +
-                 req.get('colorG') + ',' + req.get('colorB') + '>')
+        inBuffer('<1,' + str(int(float(req.get('colorR')))) + ',' +
+                 str(int(float(req.get('colorG')))) + ',' + str(int(float(req.get('colorB')))) + '>')
         return redirect('/settings')

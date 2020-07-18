@@ -6,12 +6,8 @@ from os import path
 sys.path.append(path.dirname(path.dirname(path.dirname(__file__))))
 import com
 
-
-buffer = ['<1,255,0,32>',
-          '<1,0,0,255>']
-
-
 def inBuffer(command):
+    print(command)
     com.inBuffer(command)
 
 

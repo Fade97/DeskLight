@@ -51,7 +51,6 @@ def synced():
         while (ch.find(b'XOFF') <= 0):
             if (len(bufferS) > 0):
                 ser.write(bufferS[0].encode('ASCII'))
-                # print(bufferS[0])
                 bufferS.remove(bufferS[0])
             ch = ser.read()
             if (ch == b'<'):
